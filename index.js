@@ -1,20 +1,24 @@
 const text = document.querySelector('h1')
 console.log()
-text.style.color = 'red'
-text.style.textAlign = 'center'
+text.style.color = 'gray'
+text.classList.toggle('textH1After')
 
-const new_text = document.querySelectorAll('.text-diferent')
-console.log(new_text)
 
-let pedirColor = confirm("Quieres elegir el color de los ultimos dos textos ?")
-if (pedirColor === true) {
-    let color = prompt("cual color quieres?")
-    for (let iterador of new_text) {
-        iterador.style.color = color
-    }
-} else {
-    for (let iterador of new_text) {
-        iterador.style.color = 'green'
-    }
+let new_text = document.querySelector('h3')
+new_text.classList.toggle('textHeader')
+let lastText = document.querySelector('.text-third')
+lastText.classList.toggle('textHeader')
+let opcion = confirm("Quieres cambiar el primer texto?")
+if (opcion) {
+    text.innerText = 'Hola mundo'
 }
-text.innerHTML = '<p>Ahora ya no soy un encabezado</p>'
+
+function writingHtml (name,age) {
+    const main = document.querySelector('main')
+    const myTemplate = `
+    <h1> soy ${name}</h1>
+    <p> tengo ${age} años de edad</p>
+    `
+    main.innerHTML += myTemplate
+}
+writingHtml('jose', '35')

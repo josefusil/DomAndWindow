@@ -22,3 +22,14 @@ function writingHtml (name,age) {
     main.innerHTML += myTemplate
 }
 writingHtml('jose', '35')
+
+
+let container = document.createElement('div')
+let main = document.getElementById('main')
+main.appendChild(container)
+
+container.classList.toggle('container')
+let paragraph= document.createElement('p')
+container.appendChild(paragraph)
+let textDiv = document.createTextNode('Hola, esto es un texto usando nodos en JS')
+paragraph.appendChild(textDiv)
